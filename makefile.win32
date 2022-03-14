@@ -1,0 +1,7 @@
+EXENAME = steamrunner
+CC := i686-w64-mingw32-g++ -static
+EXEEXT = .exe
+STEAMDLL = -lsteam_api
+STEAMDLLPATH = -L$(STEAMWORKS_ROOT)/sdk/redistributable_bin/
+
+include makefile.in

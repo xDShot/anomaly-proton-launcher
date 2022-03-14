@@ -1,0 +1,12 @@
+OBJS = steamrunner.cpp
+CFLAGS = -std=c++17 -Wall -Os
+STEAMINC = -I$(STEAMWORKS_ROOT)/sdk/public/
+OUTPUT = $(EXENAME)$(EXEEXT)
+
+all: $(EXENAME)
+
+$(EXENAME): $(OBJS) $(HEADERS)
+	$(CC) $(CFLAGS) $(STEAMINC) $(OBJS) -o $(OUTPUT) -Wl,$(STEAMDLLPATH),$(STEAMDLL)
+
+clean:
+	rm -rf *.o $(EXENAME)
